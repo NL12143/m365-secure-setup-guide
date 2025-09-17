@@ -1,0 +1,77 @@
+
+#!/bin/bash
+
+# Usage: ./reset-file-history.sh oldfile.html newfile.html
+
+OLD_FILE="$1"
+NEW_FILE="$2"
+
+# Step 1: Copy content from old file to new file
+cp "$OLD_FILE" "$NEW_FILE"
+
+# Step 2: Stage the new file
+git add "$NEW_FILE"
+
+# Step 3: Commit the new file
+git commit -m "Reset history: created $NEW_FILE from $OLD_FILE"
+
+# Step 4: Remove the old file
+git rm "$OLD_FILE"
+
+# Step 5: Commit the removal
+git commit -m "Removed $OLD_FILE to reset its history"
+
+# Step 6: Push changes
+git push
+
+--------------------------------------
+
+# Usage: .\Reset-FileHistory.ps1 -OldFile "index-v1.html" -NewFile "applications.html"
+
+param (
+    [string]$OldFile,
+    [string]$NewFile
+)
+
+# Step 1: Copy content
+Copy-Item $OldFile $NewFile
+
+# Step 2: Stage new file
+git add $NewFile
+git commit -m "Reset history: created $NewFile from $OldFile"
+
+# Step 3: Remove old file
+git rm $OldFile
+git commit -m "Removed $OldFile to reset its history"
+
+# Step 4: Push changes
+git push
+
+--------------------------------------------
+
+# Save as Reset-AllFileHistory.ps1 and run from your repo root
+
+# Get all files in the current folder (excluding folders and .git)
+$files = Get-ChildItem -File | Where-Object { $_.Name -notmatch '^\.git' }
+
+foreach ($file in $files) {
+    $oldName = $file.Name
+    $newName = "$($file.BaseName)_new$($file.Extension)"
+
+    Write-Host "Resetting history for: $oldName → $newName"
+
+    # Step 1: Copy content to new file
+    Copy-Item $oldName $newName
+
+    # Step 2: Stage and commit new file
+    git add $newName
+    git commit -m "Reset history: created $newName from $oldName"
+
+    # Step 3: Remove old file
+    git rm $oldName
+    git commit -m "Removed $oldName to reset its history"
+}
+
+# Step 4: Push all changes
+git push
+
