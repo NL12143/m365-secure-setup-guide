@@ -46,11 +46,11 @@
 </head>
 <body>
 
-<h1>Microsoft 365 Tenant Setup Guide</h1>
-<p>This guide outlines essential security, governance, and Copilot readiness settings for new Microsoft 365 tenants.</p>
+<h1>Microsoft 365 Applications Setup Guide</h1>
+<p>This guide outlines essential security, and governance settings for new Microsoft 365 tenants.</p>
 
 <details open>
-  <summary>🔐 Core Security & Identity</summary>
+  <summary>🔐 Identities</summary>
   <table>
     <tr>
       <th>Setting</th>
@@ -97,53 +97,6 @@
   </table>
 </details>
 
-<details>
-  <summary>🛡️ Microsoft Defender & Compliance</summary>
-  <table>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-      <th>Where to Configure</th>
-      <th>Default</th>
-      <th>Set To</th>
-    </tr>
-    <tr>
-      <td>Defender for Office 365</td>
-      <td>Blocks phishing, malware, and malicious links</td>
-      <td>Microsoft 365 Security Center</td>
-      <td>Off (requires license)</td>
-      <td>On</td>
-    </tr>
-    <tr>
-      <td>Safe Attachments & Safe Links</td>
-      <td>Protects Outlook, Teams, SharePoint, OneDrive</td>
-      <td>Defender Portal → Threat Policies</td>
-      <td>Off</td>
-      <td>On</td>
-    </tr>
-    <tr>
-      <td>Audit Logging</td>
-      <td>Tracks user/admin activity</td>
-      <td>Purview → Audit</td>
-      <td>Off</td>
-      <td>On</td>
-    </tr>
-    <tr>
-      <td>Data Loss Prevention (DLP)</td>
-      <td>Prevents sensitive data leaks</td>
-      <td>Purview → DLP</td>
-      <td>Off</td>
-      <td>On (for key workloads)</td>
-    </tr>
-    <tr>
-      <td>Retention Policies</td>
-      <td>Controls data lifecycle across services</td>
-      <td>Purview → Data Lifecycle Management</td>
-      <td>None</td>
-      <td>Configured per service</td>
-    </tr>
-  </table>
-</details>
 
 <details>
   <summary>📧 Outlook (Exchange Online)</summary>
