@@ -1,0 +1,25 @@
+
+#!/bin/bash
+
+# Usage: ./reset-file-history.sh oldfile.html newfile.html
+
+OLD_FILE="$1"
+NEW_FILE="$2"
+
+# Step 1: Copy content from old file to new file
+cp "$OLD_FILE" "$NEW_FILE"
+
+# Step 2: Stage the new file
+git add "$NEW_FILE"
+
+# Step 3: Commit the new file
+git commit -m "Reset history: created $NEW_FILE from $OLD_FILE"
+
+# Step 4: Remove the old file
+git rm "$OLD_FILE"
+
+# Step 5: Commit the removal
+git commit -m "Removed $OLD_FILE to reset its history"
+
+# Step 6: Push changes
+git push
