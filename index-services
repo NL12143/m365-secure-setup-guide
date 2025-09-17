@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Microsoft 365 Tenant Setup Guide</title>
+  <title>Microsoft 365 Service Aspects Setup Guide</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -46,10 +46,97 @@
 </head>
 <body>
 
-<h1>Microsoft 365 Applications Setup Guide</h1>
-<p>This guide outlines essential security, and governance settings for new Microsoft 365 tenants.</p>
+<h1>Microsoft 365 Service Aspects Setup Guide</h1>
+<p>This guide focuses on cross-service governance, security, and compliance settings that apply across Microsoft 365 workloads.</p>
 
 <details open>
+  <summary>🔐 Core Security & Identity</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Multi-Factor Authentication (MFA)</td>
+      <td>Prevents account takeovers</td>
+      <td>Entra ID → Security → MFA</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Conditional Access Policies</td>
+      <td>Enforces access rules based on risk/context</td>
+      <td>Entra ID → Conditional Access</td>
+      <td>None</td>
+      <td>Enabled for all users</td>
+    </tr>
+    <tr>
+      <td>Privileged Identity Management (PIM)</td>
+      <td>Limits standing admin access</td>
+      <td>Entra ID → PIM</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Access Reviews</td>
+      <td>Ensures permissions stay current</td>
+      <td>Entra ID → Identity Governance</td>
+      <td>Off</td>
+      <td>On (for guest and admin roles)</td>
+    </tr>
+    <tr>
+      <td>Terms of Use Policies</td>
+      <td>Enforces compliance for external users</td>
+      <td>Entra ID → Identity Governance</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary>🧠 Content Exposure & Discovery</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Restricted Content Discovery</td>
+      <td>Prevents Copilot and org-wide search from surfacing site content unless users have recently accessed it.</td>
+      <td>SharePoint Admin Center</td>
+      <td>No</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Search Indexing Control</td>
+      <td>Controls whether site content appears in SharePoint search results.</td>
+      <td>Site Settings → Search and Offline</td>
+      <td>Yes</td>
+      <td>No (for sensitive sites)</td>
+    </tr>
+    <tr>
+      <td>Graph Grounding Scope</td>
+      <td>Controls what content Copilot can reason over</td>
+      <td>Microsoft 365 Copilot Settings</td>
+      <td>Broad</td>
+      <td>Scoped</td>
+    </tr>
+    <tr>
+      <td>Data Access Governance Reports</td>
+      <td>Identifies overshared sites before Copilot rollout</td>
+      <td>Microsoft Purview</td>
+      <td>Not reviewed</td>
+      <td>Reviewed before enabling discovery</td>
+    </tr>
+  </table>
+</details>
 
 <details>
   <summary>🛡️ Microsoft Defender & Compliance</summary>
@@ -99,37 +186,5 @@
   </table>
 </details>
 
-<details>
-  <summary>📁 SharePoint & OneDrive</summary>
-  <table>
-    <tr>
-      <th>Setting</th>
-      <th>Description</th>
-      <th>Where to Configure</th>
-      <th>Default</th>
-      <th>Set To</th>
-    </tr>
-    <tr>
-      <td>Restricted Content Discovery</td>
-      <td>Prevents Copilot and org-wide search from surfacing site content unless users have recently accessed it.</td>
-      <td>SharePoint Admin Center</td>
-      <td>No</td>
-      <td>On</td>
-    </tr>
-    <tr>
-      <td>Search Indexing Control</td>
-      <td>Controls whether site content appears in SharePoint search results.</td>
-      <td>Site Settings → Search and Offline</td>
-      <td>Yes</td>
-      <td>No (for sensitive sites)</td>
-    </tr>
-    <tr>
-      <td>Disable Sync</td>
-      <td>Prevents users from syncing libraries to local devices.</td>
-      <td>Site Settings → Offline Availability</td>
-      <td>Yes</td>
-      <td>No (if cloud-only access is required)</td>
-    </tr>
-    <tr>
-      <td>External Sharing Restrictions</td>
-      <td>Limits or blocks sharing with external users.</td
+</body>
+</html>
