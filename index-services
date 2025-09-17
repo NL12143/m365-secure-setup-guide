@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microsoft 365 Tenant Setup Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2a4b8d;
+    }
+    details {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: #fff;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      color: #2a4b8d;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e6f0ff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Microsoft 365 Applications Setup Guide</h1>
+<p>This guide outlines essential security, and governance settings for new Microsoft 365 tenants.</p>
+
+<details open>
+
+<details>
+  <summary>🛡️ Microsoft Defender & Compliance</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Defender for Office 365</td>
+      <td>Blocks phishing, malware, and malicious links</td>
+      <td>Microsoft 365 Security Center</td>
+      <td>Off (requires license)</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Safe Attachments & Safe Links</td>
+      <td>Protects Outlook, Teams, SharePoint, OneDrive</td>
+      <td>Defender Portal → Threat Policies</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Audit Logging</td>
+      <td>Tracks user/admin activity</td>
+      <td>Purview → Audit</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Data Loss Prevention (DLP)</td>
+      <td>Prevents sensitive data leaks</td>
+      <td>Purview → DLP</td>
+      <td>Off</td>
+      <td>On (for key workloads)</td>
+    </tr>
+    <tr>
+      <td>Retention Policies</td>
+      <td>Controls data lifecycle across services</td>
+      <td>Purview → Data Lifecycle Management</td>
+      <td>None</td>
+      <td>Configured per service</td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary>📁 SharePoint & OneDrive</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Restricted Content Discovery</td>
+      <td>Prevents Copilot and org-wide search from surfacing site content unless users have recently accessed it.</td>
+      <td>SharePoint Admin Center</td>
+      <td>No</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Search Indexing Control</td>
+      <td>Controls whether site content appears in SharePoint search results.</td>
+      <td>Site Settings → Search and Offline</td>
+      <td>Yes</td>
+      <td>No (for sensitive sites)</td>
+    </tr>
+    <tr>
+      <td>Disable Sync</td>
+      <td>Prevents users from syncing libraries to local devices.</td>
+      <td>Site Settings → Offline Availability</td>
+      <td>Yes</td>
+      <td>No (if cloud-only access is required)</td>
+    </tr>
+    <tr>
+      <td>External Sharing Restrictions</td>
+      <td>Limits or blocks sharing with external users.</td
