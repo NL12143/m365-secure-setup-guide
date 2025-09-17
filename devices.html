@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microsoft 365 Device Security Setup Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2a4b8d;
+    }
+    details {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: #fff;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      color: #2a4b8d;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e6f0ff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    table th:nth-child(1), table td:nth-child(1) { width: 20%; }
+    table th:nth-child(2), table td:nth-child(2) { width: 35%; }
+    table th:nth-child(3), table td:nth-child(3) { width: 20%; }
+    table th:nth-child(4), table td:nth-child(4) { width: 12%; }
+    table th:nth-child(5), table td:nth-child(5) { width: 13%; }
+  </style>
+</head>
+<body>
+
+<h1>Microsoft 365 Device Security Setup Guide</h1>
+<p>This guide outlines essential device-level security settings for a new Microsoft 365 tenant, including Conditional Access, Intune enrollment, and compliance enforcement.</p>
+
+<details open>
+  <summary>📱 Device Enrollment & Compliance</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Device Enrollment Required</td>
+      <td>Ensures only managed devices can access corporate resources</td>
+      <td>Intune → Enrollment → Device Platform Restrictions</td>
+      <td>Optional</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>Compliance Policies</td>
+      <td>Defines health and security standards for devices</td>
+      <td>Intune → Devices → Compliance Policies</td>
+      <td>None</td>
+      <td>Configured per platform</td>
+    </tr>
+    <tr>
+      <td>Full Disk Encryption</td>
+      <td>Protects data at rest using BitLocker or FileVault</td>
+      <td>Intune → Endpoint Security → Disk Encryption</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Device Integrity Checks</td>
+      <td>Validates OS version, patch level, and security posture</td>
+      <td>Intune → Compliance Policies</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Stale Device Removal</td>
+      <td>Automatically removes inactive devices from management</td>
+      <td>Intune → Devices → Cleanup Rules</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary>🔐 Conditional Access & Risk-Based Access</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Require Compliant Device</td>
+      <td>Blocks access unless device meets compliance standards</td>
+      <td>Entra ID → Conditional Access</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Block Unmanaged Devices</td>
+      <td>Prevents access from personal or jailbroken devices</td>
+      <td>Conditional Access → Device Filters</td>
+      <td>Allowed</td>
+      <td>Blocked</td>
+    </tr>
+    <tr>
+      <td>Cloud Admin Access Limited to Managed Devices</td>
+      <td>Restricts admin actions to secure endpoints</td>
+      <td>Conditional Access → Roles</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Device Risk-Based Access</td>
+      <td>Uses Defender signals to block risky devices</td>
+      <td>Defender for Endpoint + Conditional Access</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+  </table>
+</details>
+
+<details>
+  <summary>🛡️ Endpoint Protection & Threat Defense</summary>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+      <th>Where to Configure</th>
+      <th>Default</th>
+      <th>Set To</th>
+    </tr>
+    <tr>
+      <td>Defender for Endpoint</td>
+      <td>Provides endpoint detection and response (EDR)</td>
+      <td>Intune → Endpoint Security → Antivirus</td>
+      <td>Off</td>
+      <td>On (P1 or P2)</td>
+    </tr>
+    <tr>
+      <td>Attack Surface Reduction (ASR)</td>
+      <td>Blocks exploits, macros, and suspicious behaviors</td>
+      <td>Intune → Endpoint Security → ASR Rules</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Mobile Threat Defense Integration</td>
+      <td>Connects third-party MTD apps for mobile risk detection</td>
+      <td>Intune → Endpoint Security → MTD Connector</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>App Protection for BYOD</td>
+      <td>Applies data protection to unmanaged mobile apps</td>
+      <td>Intune → Apps → App Protection Policies</td>
+      <td>Off</td>
+      <td>On</td>
+    </tr>
+  </table>
+</details>
+
+</body>
+</html>
