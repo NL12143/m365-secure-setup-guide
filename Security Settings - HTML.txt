@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microsoft 365 Tenant Setup Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2a4b8d;
+    }
+    details {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: #fff;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      color: #2a4b8d;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e6f0ff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Microsoft 365 Tenant Setup Guide</h1>
+  <p>This guide outlines essential security, governance, and Copilot readiness settings for new Microsoft 365 tenants.</p>
+
+  <details open>
+    <summary>🔐 Core Security & Identity</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Multi-Factor Authentication (MFA)</td><td>Prevents account takeovers</td><td>Entra ID → Security → MFA</td></tr>
+      <tr><td>Conditional Access Policies</td><td>Enforces access rules based on risk/context</td><td>Entra ID → Conditional Access</td></tr>
+      <tr><td>Privileged Identity Management (PIM)</td><td>Limits standing admin access</td><td>Entra ID → PIM</td></tr>
+      <tr><td>Access Reviews</td><td>Ensures permissions stay current</td><td>Entra ID → Identity Governance</td></tr>
+      <tr><td>Terms of Use Policies</td><td>Enforces compliance for external users</td><td>Entra ID → Identity Governance</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>🛡️ Microsoft Defender & Compliance</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Defender for Office 365</td><td>Blocks phishing, malware, and malicious links</td><td>Microsoft 365 Security Center</td></tr>
+      <tr><td>Safe Attachments & Safe Links</td><td>Protects Outlook, Teams, SharePoint, OneDrive</td><td>Defender Portal → Threat Policies</td></tr>
+      <tr><td>Audit Logging</td><td>Tracks user/admin activity</td><td>Purview → Audit</td></tr>
+      <tr><td>Data Loss Prevention (DLP)</td><td>Prevents sensitive data leaks</td><td>Purview → DLP</td></tr>
+      <tr><td>Retention Policies</td><td>Controls data lifecycle across services</td><td>Purview → Data Lifecycle Management</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>📧 Outlook (Exchange Online)</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Anti-Spam & Anti-Phishing</td><td>Prevents spoofing and impersonation</td><td>Exchange Admin Center</td></tr>
+      <tr><td>Mailbox Auditing</td><td>Tracks mailbox access and changes</td><td>Purview → Audit</td></tr>
+      <tr><td>Auto-Expanding Archives</td><td>Prevents mailbox size issues</td><td>Exchange Admin Center</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>💬 Microsoft Teams</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Guest Access Controls</td><td>Limits external collaboration risks</td><td>Teams Admin Center → Org-wide Settings</td></tr>
+      <tr><td>App Permissions & Policies</td><td>Blocks risky third-party apps</td><td>Teams Admin Center → App Management</td></tr>
+      <tr><td>Meeting Policies</td><td>Controls recording, transcription, and roles</td><td>Teams Admin Center → Meetings</td></tr>
+      <tr><td>Retention Policies</td><td>Controls chat and channel message lifecycle</td><td>Purview → Data Lifecycle Management</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>📁 SharePoint & OneDrive</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Restricted Content Discovery</td><td>Prevents Copilot from surfacing risky sites</td><td>SharePoint Admin Center</td></tr>
+      <tr><td>Search Indexing Control</td><td>Limits visibility of site content</td><td>Site Settings → Search and Offline</td></tr>
+      <tr><td>Disable Sync</td><td>Prevents local copies of sensitive files</td><td>Site Settings → Offline Availability</td></tr>
+      <tr><td>External Sharing Restrictions</td><td>Blocks or limits guest access</td><td>SharePoint Admin Center → Sharing</td></tr>
+      <tr><td>Sensitivity Labels</td><td>Applies protection to files based on content</td><td>Purview → Sensitivity Labeling</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>🤖 Copilot-Specific Readiness</summary>
+    <table>
+      <tr><th>Setting</th><th>Why It Matters</th><th>Where to Configure</th></tr>
+      <tr><td>Enable Restricted Discovery by Default</td><td>Prevents accidental exposure via Copilot</td><td>PowerShell or SharePoint Admin Center</td></tr>
+      <tr><td>Review Data Access Governance Reports</td><td>Identifies overshared sites before Copilot rollout</td><td>Microsoft Purview</td></tr>
+      <tr><td>Limit Graph Grounding Scope</td><td>Controls what Copilot can reason over</td><td>Microsoft 365 Copilot Settings</td></tr>
+    </table>
+  </details>
+
+</body>
+</html>
