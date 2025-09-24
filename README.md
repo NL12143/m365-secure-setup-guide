@@ -22,6 +22,21 @@ SitePoint     Emoji Tutorial	Deep dive into styling, accessibility, and Unicode 
 Unicode       Emoji Charts	Official source for all emoji code points and categories
 
 🛠️ Example Usage in Your HTML
-<li>📱 <a href="SPFx-Setup.html">SPFx-Setup Guide</a></li>
-<li>&#128241; <a href="yo-wpa-vue-audit-report.html">yo-wpa-vue-audit-report</a></li>
+<li>&#128241; <a href="SPFx-Setup.html">SPFx-Setup Guide</a></li>
+<li>🔍<a href="yo-wpa-vue-audit-report.html">yo-wpa-vue-audit-report</a></li>
 Both lines render the same icon—one using direct character, the other using Unicode escape.
+
+🔧 Bonus Tip: Emoji Shortcodes
+On GitHub-flavored Markdown, you can also use emoji shortcodes like :package: or :lock::
+- :package: Package hygiene
+- :lock: Compliance checklist
+They render as 📦 and 🔒 respectively.
+
+
+🧠 Windows Emoji Picker 
+Is a built-in Windows feature that lets you insert:
+Emoji characters (like 📱, 🧩, 🔐)
+Kaomoji (like (●'◡'●) or ¯\\_(ツ)_/¯)
+Symbols (arrows, currency, math, etc.)
+These are all Unicode characters, meaning they’re part of the universal character set supported by most modern apps, browsers, and Markdown renderers.
+It is triggered by Windows key + ; (or Windows key + .), and is called the Windows Emoji Picker, and it’s deeply tied to Unicode.
