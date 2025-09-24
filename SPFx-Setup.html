@@ -66,6 +66,32 @@ foreach ($pkg in $spfxPackages) {
   <details>
     <summary>🔍 3. Audit the .tgz Files</summary>
     <pre>
-$archives = Get-ChildItem -Filter "*.tgz"
 
-foreach ($archive
+      $archives = Get-ChildItem -Filter "*.tgz"
+
+foreach ($archive in $archives) {
+    Write-Host "🔍 Auditing $($archive.Name)"
+    # Optional: extract and scan for bundle.js, telemetry, etc.
+}
+    </pre>
+  </details>
+
+  <details>
+    <summary>🚀 4. Publish to Azure Artifacts</summary>
+    <pre>
+foreach ($archive in $archives) {
+    Write-Host "🚀 Publishing $($archive.Name) to Azure Artifacts"
+    npm publish $archive.FullName --registry "https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/registry/"
+}
+    </pre>
+  </details>
+
+  <details>
+    <summary>🔗 5. Integrate with Onboarding or CI</summary>
+    <pre>
+npm install @microsoft/sp-core-library@1.21.1 --registry=https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/registry/
+    </pre>
+  </details>
+
+</body>
+</html>
