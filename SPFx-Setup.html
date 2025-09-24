@@ -3,12 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>SPFx Package Hygiene Pipeline</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2a4b8d;
+    }
+    details {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: #fff;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      color: #2a4b8d;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  </style>
 </head>
 <body>
   <h1>SPFx Package Hygiene Pipeline</h1>
+  <p><i>This modular routine mirrors, audits, and publishes SPFx packages to Azure Artifacts, with CI-ready integration.</i></p>
 
   <details open>
-    <summary><strong>1. Define SPFx Package List</strong></summary>
+    <summary>📦 1. Define SPFx Package List</summary>
     <pre>
 $spfxPackages = @(
     "@microsoft/generator-sharepoint@1.21.1",
@@ -23,7 +54,7 @@ $spfxPackages = @(
   </details>
 
   <details>
-    <summary><strong>2. Mirror Packages Locally</strong></summary>
+    <summary>📥 2. Mirror Packages Locally</summary>
     <pre>
 foreach ($pkg in $spfxPackages) {
     Write-Host "📦 Packing $pkg"
@@ -33,33 +64,8 @@ foreach ($pkg in $spfxPackages) {
   </details>
 
   <details>
-    <summary><strong>3. Audit the .tgz Files</strong></summary>
+    <summary>🔍 3. Audit the .tgz Files</summary>
     <pre>
 $archives = Get-ChildItem -Filter "*.tgz"
 
-foreach ($archive in $archives) {
-    Write-Host "🔍 Auditing $($archive.Name)"
-    # Optional: extract and scan for bundle.js, telemetry, etc.
-}
-    </pre>
-  </details>
-
-  <details>
-    <summary><strong>4. Publish to Azure Artifacts</strong></summary>
-    <pre>
-foreach ($archive in $archives) {
-    Write-Host "🚀 Publishing $($archive.Name) to Azure Artifacts"
-    npm publish $archive.FullName --registry "https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/registry/"
-}
-    </pre>
-  </details>
-
-  <details>
-    <summary><strong>5. Integrate with Onboarding or CI</strong></summary>
-    <pre>
-npm install @microsoft/sp-core-library@1.21.1 --registry=https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/registry/
-    </pre>
-  </details>
-
-</body>
-</html>
+foreach ($archive
