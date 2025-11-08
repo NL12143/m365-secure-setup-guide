@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Classification & Access Matrix</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f4f4f4; }
+    caption { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>📄 Document Classification & Access Matrix</h1>
+  <p>This matrix defines how document sensitivity (CLASS) influences access permissions and control mechanisms.</p>
+
+  <table>
+    <caption>🔐 Access Matrix</caption>
+    <thead>
+      <tr>
+        <th>CLASS</th>
+        <th>Public Access</th>
+        <th>Internal Access</th>
+        <th>Group Access</th>
+        <th>Per-User Access</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>PUBLIC</strong></td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><strong>INTERNAL</strong></td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><strong>CONFIDENTIAL</strong></td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><strong>PERSONNEL</strong></td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>🔒</td>
+        <td>🔒</td>
+      </tr>
+      <tr>
+        <td><strong>SECRET</strong></td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>🔒</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>📘 Legend</caption>
+    <thead>
+      <tr>
+        <th>Icon</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>✅</td>
+        <td>Access permitted via standard permissions</td>
+      </tr>
+      <tr>
+        <td>❌</td>
+        <td>Access not permitted via permissions</td>
+      </tr>
+      <tr>
+        <td>🚫</td>
+        <td>Access not permitted, enforced via encryption</td>
+      </tr>
+      <tr>
+        <td>🔒</td>
+        <td>Access permitted via encryption or strict control</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Note:</strong> Use this matrix to guide metadata tagging, permission settings, and encryption policies across your document management system.</p>
+
+</body>
+</html>
+
