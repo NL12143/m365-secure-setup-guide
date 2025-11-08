@@ -121,56 +121,77 @@
 </head>
 <body>
 
-  <table>
-    <caption>🧾 Roles/Permissions Matrix</caption>
-    <thead>
-      <tr>
-        <th>Role</th>
-        <th>Read (R)</th>
-        <th>Edit (E)</th>
-        <th>Create (C)</th>
-        <th>Delete (D)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Owner</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>Editor</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>Contributor</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>🚫</td>
-      </tr>
-      <tr>
-        <td>Reader</td>
-        <td>✅</td>
-        <td>🚫</td>
-        <td>🚫</td>
-        <td>🚫</td>
-      </tr>
-      <tr>
-        <td>Guest</td>
-        <td>🚫</td>
-        <td>🚫</td>
-        <td>🚫</td>
-        <td>🚫</td>
-      </tr>
-    </tbody>
-  </table>
+<style>
+    .data-table {
+        border-collapse: collapse;
+    }
+    .border-top {
+        border-top: 1px solid #000;
+    }
+    .border-bottom {
+        border-bottom: 1px solid #000;
+    }
+    .border-left {
+        border-left: 1px solid #000;
+    }
+    .border-right {
+        border-right: 1px solid #000;
+    }
+    .align-center {
+        text-align: center;
+    }
+</style>
 
+<table class="data-table">
+    <tr>
+        <th class="border-top border-bottom border-left border-right">Role</th>
+        <th class="border-top border-bottom border-right align-center">Read</th>
+        <th class="border-top border-bottom border-right align-center">Edit</th>
+        <th class="border-top border-bottom border-right align-center">Add</th>
+        <th class="border-top border-bottom border-right align-center">Delete</th>
+        <th class="border-top border-bottom border-right align-center">Access</th>
+    </tr>
+    <tr>
+        <td class="border-bottom border-left border-right">Owner</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+    </tr>
+    <tr>
+        <td class="border-bottom border-left border-right">Editor</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+    </tr>
+    <tr>
+        <td class="border-bottom border-left border-right">Contributor</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+    </tr>
+    <tr>
+        <td class="border-bottom border-left border-right">Reader</td>
+        <td class="border-bottom border-right align-center">✅</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+    </tr>
+    <tr>
+        <td class="border-bottom border-left border-right">Guest</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+        <td class="border-bottom border-right align-center">🚫</td>
+    </tr>
+</table>
+  
 </body>
 </html>
-
