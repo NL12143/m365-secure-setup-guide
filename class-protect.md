@@ -11,3 +11,8 @@
 
 Please ensure all documents are labeled appropriately and handled in accordance with their classification level.
 
+
+| CLASS         | Public Access | Internal Access | Group Access | Per-User Access |
+|:--------------|:-------------:|:---------------:|:------------:|:---------------:|
+| **PUBLIC**    | ✅            | ✅              | ✅           | ✅            |
+| **SECRET**    | ❌            | ❌              | ❌           | 🔒            |
