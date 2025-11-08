@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +8,8 @@
     body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
     table { border-collapse: collapse; width: 100%; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-    th { background-color: #f4f4f4; }
-    caption { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+    th:first-child, td:first-child { text-align: left; }
+    caption { font-size: 1.2em; font-weight: bold; text-align: left; margin-bottom: 10px; }
     p { margin-bottom: 20px; }
   </style>
 </head>
@@ -28,6 +27,7 @@
   </p>
 
   <table>
+    <caption>🔐 Access Matrix</caption>
     <thead>
       <tr>
         <th>CLASS</th>
@@ -40,10 +40,10 @@
     <tbody>
       <tr>
         <td><strong>PUBLIC</strong></td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
+        <td>➡️</td>
+        <td>➡️</td>
+        <td>➡️</td>
+        <td>➡️</td>
       </tr>
       <tr>
         <td><strong>INTERNAL</strong></td>
@@ -72,6 +72,30 @@
         <td>🚫</td>
         <td>🚫</td>
         <td>🔐</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>📘 Legend</caption>
+    <thead>
+      <tr>
+        <th style="text-align: left;">Icon</th>
+        <th style="text-align: left;">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>➡️</td>
+        <td>Access permitted via permissions (directional control)</td>
+      </tr>
+      <tr>
+        <td>🔐</td>
+        <td>Access permitted via encryption or strict control</td>
+      </tr>
+      <tr>
+        <td>🚫</td>
+        <td>Access not permitted</td>
       </tr>
     </tbody>
   </table>
