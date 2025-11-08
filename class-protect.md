@@ -49,12 +49,6 @@ Symbol	Meaning
 🔐	Unlocked padlock—access granted, less secure than 🔒
 🛂	Passport control—symbolic of authorized entry
 
-✅	Standard checkmark for “permitted” or “approved”
-➡️	Directional access (like a one-way road sign)
-🟢	Green circle, often used for “go” or “allowed”
-🔐	Unlocked padlock—access granted, less secure than 🔒
-🛂	Passport control—symbolic of authorized entry
----
 
 ## 🧠 Notes
 - **CLASS** defines the sensitivity of the document.
