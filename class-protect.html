@@ -18,12 +18,10 @@
   <h1>🔐 Document Classification & Protection Matrix</h1>
 
   <p>
-    This matrix defines how document sensitivity (<strong>CLASS</strong>) influences access permissions and control mechanisms.<br>
-  <BR>
+    This matrix defines how document sensitivity (<strong>CLASS</strong>) influences access permissions and control mechanisms.<br><br>
     Most documents are protected by permissions (e.g., SharePoint groups, roles, or labels), represented by:<br>
     🚫 = access not permitted<br>
-    ➡️ = access permitted via directional control<br>
-    <BR>
+    ➡️ = access permitted via directional control<br><br>
     Some documents require stricter protection through encryption or advanced enforcement:<br>
     🔐 = access permitted via encryption or strict control
   </p>
@@ -42,10 +40,10 @@
     <tbody>
       <tr>
         <td><strong>PUBLIC</strong></td>
-        <td>➡️</td>
-        <td>➡️</td>
-        <td>➡️</td>
-        <td>➡️</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
       </tr>
       <tr>
         <td><strong>INTERNAL</strong></td>
@@ -88,8 +86,12 @@
     </thead>
     <tbody>
       <tr>
+        <td>✅</td>
+        <td>Access permitted via standard permissions</td>
+      </tr>
+      <tr>
         <td>➡️</td>
-        <td>Access permitted via permissions (directional control)</td>
+        <td>Access permitted via directional control (e.g., group or role-based)</td>
       </tr>
       <tr>
         <td>🔐</td>
