@@ -33,18 +33,6 @@ Some documents require stricter protection through encryption or advanced enforc
 | **SECRET**      | 🚫     | 🚫       | 🚫    | 🔐       |
 
 
-## 🔐 Document Classification & Access Matrix
-
-| CLASS           | Public | Internal | Group | Per-User |
-|----------------|:------:|:--------:|:-----:|:--------:|
-| **PUBLIC**      | ✅     | ✅       | ✅    | ✅       |
-| **INTERNAL**    | 🚫     | ➡️       | ➡️    | ➡️       |
-| **CONFIDENTIAL**| 🚫     | 🚫       | ➡️    | ➡️       |
-| **PERSONNEL**   | 🚫     | 🚫       | 🔐    | 🔐       |
-| **SECRET**      | 🚫     | 🚫       | 🚫    | 🔐       |
-
----
-
 ## 📘 Legend
 
 | Icon   | Access control voa Permissions or Encryption       |
@@ -61,5 +49,17 @@ Some documents require stricter protection through encryption or advanced enforc
 - **ACCESS** defines who may view the document.
 - **CONTROL**  defines how access is technically enforced.
 
+
+## 🧾 Roles/Permissions Matrix
+
+| Role         | Read (R) | Edit (E) | Create (C) | Delete (D) |
+|:-------------|:--------:|:--------:|:----------:|:----------:|
+| Owner        | ✅       | ✅       | ✅         | ✅         |
+| Editor       | ✅       | ✅       | ✅         | ✅         |
+| Contributor  | ✅       | ✅       | ✅         | 🚫         |
+| Reader       | ✅       | 🚫       | 🚫         | 🚫         |
+| Guest        | 🚫       | 🚫       | 🚫         | 🚫         |
+
+🔐 Encryption as a top-set is conceptually distinct from access control. While permissions (ACLs, roles, labels) act like a perimeter fence—controlling who can approach or open the file—encryption is a lock built into the file itself. Even if someone bypasses the fence, they still can’t read the contents without the key.
 
 
