@@ -14,7 +14,23 @@ Please ensure all documents are labeled appropriately and handled in accordance 
 
 # 📄 Document Classification & Access Matrix
 
-This matrix defines how document sensitivity (CLASS) influences access permissions and control mechanisms.
+This matrix defines how document sensitivity (**CLASS**) influences access permissions and control mechanisms.
+
+Most documents are protected by permissions (e.g., SharePoint groups, roles, or labels), represented by:
+- 🚫 = access not permitted
+- ➡️ = access permitted via directional control
+
+Some documents require stricter protection through encryption or advanced enforcement:
+- 🔐 = access permitted via encryption or strict control
+
+| CLASS           | Public | Internal | Group | Per-User |
+|----------------|:------:|:--------:|:-----:|:--------:|
+| **PUBLIC**      | ✅     | ✅       | ✅    | ✅       |
+| **INTERNAL**    | 🚫     | ➡️       | ➡️    | ➡️       |
+| **CONFIDENTIAL**| 🚫     | 🚫       | ➡️    | ➡️       |
+| **PERSONNEL**   | 🚫     | 🚫       | 🔐    | 🔐       |
+| **SECRET**      | 🚫     | 🚫       | 🚫    | 🔐       |
+
 
 ## 🔐 Document Classification & Access Matrix
 
