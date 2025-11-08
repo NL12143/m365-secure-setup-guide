@@ -104,5 +104,73 @@
     </tbody>
   </table>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roles/Permissions Matrix</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background-color: #f4f4f4; text-align: center; }
+    td:first-child { text-align: left; }
+    td:not(:first-child) { text-align: center; }
+    caption { font-size: 1.2em; font-weight: bold; text-align: left; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <table>
+    <caption>🧾 Roles/Permissions Matrix</caption>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Read (R)</th>
+        <th>Edit (E)</th>
+        <th>Create (C)</th>
+        <th>Delete (D)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Owner</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>Editor</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>Contributor</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>🚫</td>
+      </tr>
+      <tr>
+        <td>Reader</td>
+        <td>✅</td>
+        <td>🚫</td>
+        <td>🚫</td>
+        <td>🚫</td>
+      </tr>
+      <tr>
+        <td>Guest</td>
+        <td>🚫</td>
+        <td>🚫</td>
+        <td>🚫</td>
+        <td>🚫</td>
+      </tr>
+    </tbody>
+  </table>
+
 </body>
 </html>
+
