@@ -41,20 +41,13 @@ This matrix defines how document sensitivity (CLASS) influences access permissio
 | ❌     | Access not permitted via permissions              |
 | 🚫     | Access not permitted, enforced via encryption     |
 | 🔐     | Access permitted via encryption or strict control |
-
-Symbol	Meaning
-✅	Standard checkmark for “permitted” or “approved”
-➡️	Directional access (like a one-way road sign)
-🟢	Green circle, often used for “go” or “allowed”
-🔐	Unlocked padlock—access granted, less secure than 🔒
-🛂	Passport control—symbolic of authorized entry
+| 🛂	   | Passport control—symbolic of authorized entry      | 
 
 
 ## 🧠 Notes
 - **CLASS** defines the sensitivity of the document.
 - **ACCESS** defines who may view the document.
 - **CONTROL**  defines how access is technically enforced.
-- Use this matrix to guide metadata tagging, permission settings, and encryption policies.
 
 
 
